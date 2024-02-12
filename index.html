@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BandSite</title>
+    <link rel="stylesheet" href="styles/navbar.css"> <!-- Link to your compiled CSS -->
+    <link rel="stylesheet" href="styles/bio.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar__logo"><a href="index.html">BANDSITE</a></div>
+        <div class="navbar__links">
+            <a href="/index.html" class="navbar__link">Biography</a>
+            <a href="/pages/shows.html" class="navbar__link">Shows</a>
+        </div>
+        <div class="navbar__menu-icon">&#9776;</div> <!-- Hamburger menu icon -->
+        <div class="navbar__mobile-links">
+            <!-- Mobile links will be shown when the menu is opened -->
+            <a href="/index.html" id="bioLink" class="navbar__link active">Biography</a>
+            <a href="/pages/shows.html" id="showsLink" class="navbar__link">Shows</a>
+        </div>
+    </nav>
+
+    <section class="bg-section">
+        <h2>
+        Slaying Pop Album
+        </h2>
+        <br>
+        <h1>
+         King of Bands X <br> Jal
+        </h1>
+
+     </section>
+
+
+
+    <!-- About -->
+
+    <section class="about-the-musicians">
+        <h2>About the Musicians</h2>
+        <img src="/assets/images/muscians.jpg" alt="Band performing on stage" class="band-image">
+        <div class="about-content">
+            <div class="axr">
+                <blockquote>
+                    "We push each other to be the best. It's not uncommon for one of us to say 'this needs to be better, back to the drawing board'"
+                    <span>- Bryan Teddy, lead vocalist of The Bees Knees</span>
+                  </blockquote>
+            </div>
+      
+          <p>
+            The Bees Knees is a pop rock band originating from San Francisco, California. The band consists of lead vocalist Bryan Teddy, guitarist Mack Tollens, guitarist Andrew Green, bassist Kent Zulkee and drummer Freddie Fischer. The band achieved its first commercial success as an unsigned act, drawing attention from manager Cam Adams. Having worked with other popular acts (The Elephant In The Room, One Trick Pony, The Cat's Meow), Adams was confident the band could succeed even further, pushing them to sign with Magenta Records.
+          </p>
+          <p>
+            From there, the band has soared, gaining international recognition and ranking in the top 10 on the Poster Charts. New fans immediately fell in love with the band's original and organic attitude, solidifying their place as one of the hottest and fastest up and coming acts of this century. Fans affectionately refer to themselves as "The Hive" and are drawn to their candid and authentic performances on stage. Looking forward to touring in the future, The Bees Knees are currently recording their second studio album, looking to be released in late 2021.
+          </p>
+        </div>
+      </section>
+      
+
+
+
+      <div class="photo-gallery">
+        <h2>Photo Gallery</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="/assets/images/flower.jpg" alt="Gallery Image 1"></div>
+            <div class="gallery-item"><img src="/assets/images/music-bio.jpg" alt="Gallery Image 2"></div>
+            <div class="gallery-item"><img src="/assets/images/bg-shows.jpg" alt="Gallery Image 3"></div>
+            <div class="gallery-item"><img src="/assets/images/muscians.jpg" alt="Gallery Image 4"></div>
+            <div class="gallery-item"><img src="/assets/images/music-bio.jpg" alt="Gallery Image 5"></div>
+            <div class="gallery-item"><img src="/assets/images/bg-shows.jpg" alt="Gallery Image 6"></div>
+            <div class="gallery-item"><img src="/assets/images/music-bio.jpg" alt="Gallery Image 7"></div>
+            <div class="gallery-item"><img src="/assets/images/bg-shows.jpg" alt="Gallery Image 8"></div>
+            <div class="gallery-item"><img src="/assets/images/flower.jpg" alt="Gallery Image 9"></div>
+        </div>
+    </div>
+
+    <div class="comments-container">
+        <h2>Join the Conversation</h2>
+        <form id="comment-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required placeholder="Your Name">
+            
+            <label for="comment">Comment:</label>
+            <textarea id="comment" required placeholder="Your Comment"></textarea>
+            
+            <button type="submit">Submit</button>
+        </form>
+    
+        <div id="comments-list">
+            <div class="comment">
+                <strong>Connor Walton</strong> - <small>02/17/2021</small>
+                <p>This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.</p>
+            </div>
+            <div class="comment">
+                <strong>Emilie Beach</strong> - <small>01/09/2021</small>
+                <p>I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.</p>
+            </div>
+            <div class="comment">
+                <strong>Miles Acosta</strong> - <small>12/20/2020</small>
+                <p>I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.</p>
+            </div>
+            <!-- Comments will be populated here by JavaScript -->
+        </div>
+    </div>
+    
+    
+
+      <footer class="footer">
+        <div class="container">
+            <div class="footer__left">
+                <h2 class="footer__heading">Get in Touch</h2>
+                <div class="footer__social-icons">
+                    <img src="/assets/icons/icons8-facebook-48.png" alt="Facebook">
+                    <img src="/assets/icons/icons8-insta-48.png" alt="Instagram">
+                    <img src="/assets/icons/icons8-twitter-48.png" alt="Twitter">
+                </div>
+            </div>
+            
+            <div class="footer__contacts">
+                <div class="footer__contact">
+                    <p>Cam Adams<br>
+                    The Bees Knees Management<br>
+                    503 Broadway Penthouse,<br>
+                    New York, NY 10012, USA<br>
+                    <a href="mailto:info@thebeesknees.com">info@thebeesknees.com</a></p>
+                </div>
+                <div class="footer__contact">
+                    <p>Pearl Gregg<br>
+                    Limitless Artist Group<br>
+                    Booking Agent for USA / South America / Japan<br>
+                    <a href="mailto:pearl.gregg@limitlessag.com">pearl.gregg@limitlessag.com</a></p>
+                </div>
+                <div class="footer__contact">
+                    <p>Carson Whyte<br>
+                    ARCH Entertainment<br>
+                    Booking Agent for UK / EU / AU<br>
+                    <a href="mailto:cwhyte@archentertainment.com">cwhyte@archentertainment.com</a></p>
+                </div>
+            </div>
+    
+            <div class="footer__right">
+                <p class="footer__brand">BANDSITE</p>
+            </div>
+        </div>
+    </footer>
+      
+
+    <script>
+        const menuIcon = document.querySelector('.navbar__menu-icon');
+        const mobileLinks = document.querySelector('.navbar__mobile-links');
+
+        menuIcon.addEventListener('click', () => {
+            mobileLinks.classList.toggle('show');
+        });
+    </script>
+    <script>
+        // JavaScript to dynamically set the active class on navbar links
+        document.addEventListener('DOMContentLoaded', function () {
+            const navbarLinks = document.querySelectorAll('.navbar__link');
+            const currentUrl = window.location.href;
+    
+            navbarLinks.forEach(link => {
+                if (currentUrl.includes(link.getAttribute('href'))) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+    
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="/scripts/index-page.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+</body>
+</html>

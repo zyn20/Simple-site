@@ -1,0 +1,91 @@
+// Assuming color variables are defined as provided in earlier examples
+$background-color: #232323; // Dark background
+$active-link-color: #FFFFFF; // White color for active link
+$inactive-link-color: #E1E1E1; // Mercury color for inactive link (updated)
+$underline-color: #FFFFFF; // White underline for active link
+
+.navbar {
+    background-color: $background-color;
+    color: $inactive-link-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    height: 4.9rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+
+    &__logo {
+        a {
+            color: $active-link-color;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+    }
+
+    &__links {
+        display: flex;
+        align-items: center;
+    }
+
+    &__link {
+        color: $inactive-link-color; // Inactive link color set to Mercury
+        padding: 0 1rem;
+        text-decoration: none;
+        font-weight: bold;
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        &:hover {
+            color: $active-link-color;
+        }
+
+        &.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 2px;
+            width: 70%;
+            background-color: $underline-color; // Ensure the underline color is set
+        }
+    }
+
+    &__menu-icon {
+        display: none; // For mobile view
+        font-size: 2rem;
+        cursor: pointer;
+    }
+
+    &__mobile-links {
+        display: none; // For mobile view
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 4.9rem;
+        left: 0;
+        background-color: $background-color;
+
+        &.show {
+            display: flex;
+        }
+    }
+}
+
+// Responsive design for mobile devices
+@media (max-width: 768px) {
+    .navbar {
+        &__links {
+            display: none;
+        }
+
+        &__menu-icon {
+            display: block;
+        }
+    }
+}

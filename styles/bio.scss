@@ -1,0 +1,414 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif; // Specify your preferred font-family
+}
+
+.about-the-musicians {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  color: #323232; // Updated to BandSite-Black
+  background-color: #fff; // White background
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #323232; // Updated to BandSite-Black
+  }
+
+  .band-image {
+    width: 100%;
+    display: block;
+    margin-bottom: 2rem;
+  }
+
+  .about-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+    blockquote {
+      flex-basis: 100%; // Take the full width on smaller screens
+      font-style: italic;
+      padding-left: 1rem;
+      border-left: 4px solid #323232; // Updated to BandSite-Black
+      margin: 0 0 2rem 0;
+
+      span {
+        display: block;
+        margin-top: 1rem;
+        font-weight: bold;
+        color: #323232; // Updated to BandSite-Black
+      }
+    }
+
+    p {
+      flex-grow: 1; // Allow paragraph to grow
+      color: #323232; // Updated to BandSite-Black
+    }
+  }
+
+  @media (min-width: 768px) {
+    .about-content {
+      // Adjust to use grid for two columns
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+
+      blockquote {
+        grid-column: 1 / 2; // Blockquote takes the first column
+      }
+
+      p {
+        grid-column: 2 / 3; // Paragraph takes the second column
+      }
+    }
+  }
+}
+
+.bg-section {
+  background-image: url('/assets/images/music-bio.jpg'); /* Replace with the actual path to your image */
+  background-size: cover; /* Cover the entire container */
+  background-position: center center; /* Center the image in the container */
+  width: 100vw; /* Full width of the viewport */
+  height: 100vh; /* Full height of the viewport */
+  display: flex;
+  flex-direction: column; /* Stack the h2 and h1 vertically */
+  justify-content: center; /* Center the content vertically */
+  align-items: center; /* Center the content horizontally */
+  text-align: center;
+  color: #fbfaff; /* Set text color for better visibility */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Black shadow with 50% opacity */
+}
+
+@media (max-width: 768px) {
+  .bg-section {
+      background-position: center; /* Adjust position for mobile */
+      height: 50vh; /* Adjust height on mobile */
+      padding: 20px; /* Add padding to ensure text is not cut off */
+  }
+}
+
+.bg-section h2 {
+  font-size: 3vw; /* Responsive font size based on viewport width */
+  margin-bottom: 0.625rem;
+}
+
+.bg-section h1 {
+  font-size: 4.5vw; /* Responsive font size based on viewport width */
+  line-height: 1.2;
+}
+
+/* Media queries for finer control at specific breakpoints */
+@media (max-width: 768px) {
+  .bg-section h2 {
+      font-size: 4vw; /* Larger font size for smaller screens */
+  }
+
+  .bg-section h1 {
+      font-size: 6vw; /* Larger font size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .bg-section h2 {
+      font-size: 5vw; /* Even larger font size for very small screens */
+  }
+
+  .bg-section h1 {
+      font-size: 7.5vw; /* Even larger font size for very small screens */
+  }
+}
+
+
+.footer {
+    background-color: #232323; // A dark background color for the footer
+    color: #fff; // White color text for better contrast
+    padding: 2rem 0; // Top and bottom padding
+    font-family: 'Arial', sans-serif; // Font family for the text
+  
+    .container {
+      display: flex;
+      justify-content: space-between; // Space out the main content
+      align-items: flex-start; // Align items to the start vertically
+      max-width: 1200px; // Maximum width of the inner content
+      margin: 0 auto; // Center the container
+      padding: 0 2rem; // Padding on the sides
+  
+      .footer__section {
+        // Remove the &:first-child, &:nth-child(2) and &:last-child if they are not needed anymore
+  
+        // Adjust flex-basis for 3 column layout
+        flex-basis: calc(33.333% - 40px); // Subtracting the gaps from the total width
+        margin-right: 20px; // Half of the gap on the right
+        margin-left: 20px; // Half of the gap on the left
+        &:first-child, &:last-child {
+          margin-right: 0;
+          margin-left: 0;
+        }
+  
+        &:first-child {
+          order: -1; // Bring 'Get in Touch' to the start
+          text-align: left; // Align the 'Get in Touch' to the left
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+  
+          .footer__heading {
+            margin-bottom: 0.5rem; // Space below the heading
+            font-size: 1.5rem; // Size of the 'Get in Touch' heading
+          }
+  
+          .footer__social-icons {
+            display: flex;
+            gap: 0.5rem; // Space between social icons
+  
+            img {
+              height: auto; // Maintain aspect ratio
+              width: 24px; // Width of the social icons
+            }
+          }
+        }
+  
+        &:last-child {
+            order: 1; // Bring 'BANDSITE' to the end
+            text-align: right; // Align the 'BANDSITE' text to the right
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-end;
+    
+            .footer__brand {
+              font-size: 1.5rem; // Size of the 'BANDSITE' brand text
+              font-weight: bold; // Bold text for the brand
+              margin-top: 1rem; // Spacing above the brand name
+            }
+          }
+        }
+    
+        .footer__contact {
+          p {
+            margin: 0 0 1rem; // Space between paragraphs
+            font-size: 0.9rem; // Size of the contact text
+            line-height: 1.5; // Line height for better readability
+          }
+    
+          a {
+            color: #fff; // White color for links
+            text-decoration: none; // No underline for links
+    
+            &:hover {
+              text-decoration: underline; // Underline on hover for better UX
+            }
+          }
+        }
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .footer .container {
+        flex-direction: column;
+        align-items: center;
+    
+        .footer__section {
+          // Make each section take full width and center its content
+          flex-basis: 100%;
+          text-align: center;
+          margin: 1rem 0; // Add top and bottom margin for spacing
+    
+          // Reset order on smaller screens
+          &:first-child, &:last-child {
+            order: 0;
+          }
+        }
+    
+        .footer__social-icons {
+          justify-content: center; // Center social icons on smaller screens
+        }
+    
+        .footer__brand {
+            align-items: center; // Center align the 'BANDSITE' brand
+            margin-top: 1rem; // Add spacing above the brand on smaller screens
+          }
+      
+          .footer__contact {
+            text-align: center; // Center align contact information on smaller screens
+      
+            p {
+              margin-bottom: 0.5rem; // Reduce spacing between paragraphs on smaller screens
+            }
+          }
+        }
+      }
+      
+      .photo-gallery {
+        text-align: center;
+        margin-bottom: 2rem;
+        color: #323232; // Keep the text color as BandSite-Black
+        background-color: #FAFAFA; // Updated to Alabaster for the background
+      }
+      
+      .photo-gallery h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: #323232; // Keep the text color as BandSite-Black
+      }
+    
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Three images per row */
+        gap: 1rem;
+    }
+    
+    .gallery-item {
+        margin: 0.5rem; /* Add margin around each image for better spacing */
+    }
+    
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* Optionally add rounded corners to images */
+    }
+    
+    /* Adjustments for responsiveness */
+    @media (max-width: 768px) {
+        .gallery-grid {
+            grid-template-columns: repeat(2, 1fr); /* Two images per row for smaller screens */
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .gallery-grid {
+            grid-template-columns: 1fr; /* One image per row for very small screens */
+        }
+    }
+    
+ 
+    .comments-container {
+      width: 80%;
+      margin: auto;
+      padding: 20px;
+      background-color: #f4f4f4;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      color: #333;
+    
+      h2 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+      }
+    
+      #comment-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    
+        input,
+        textarea {
+          width: 100%;
+          padding: 12px;
+          border: 1px solid #ccc;
+          border-radius: 6px;
+          background-color: #fff;
+          color: #333;
+          margin-bottom: 10px;
+          transition: border-color 0.3s ease;
+    
+          &:focus {
+            outline: none;
+            border-color: #007bff;
+          }
+        }
+    
+        button {
+          width: 50%;
+          padding: 12px;
+          background-color: #007bff;
+          color: #fff;
+          border: none;
+          border-radius: 6px;
+          cursor: pointer;
+          transition: background-color 0.2s ease, transform 0.2s ease;
+    
+          &:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+          }
+        }
+      }
+    
+      .comment {
+        background-color: #fff;
+        padding: 20px;
+        margin-top: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+        &:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+    
+        strong {
+          font-size: 1.2em;
+          color: #333;
+        }
+    
+        small {
+          font-size: 0.8em;
+          text-align: right;
+          color: #666;
+        }
+    
+        p {
+          font-size: 1em;
+          color: #555;
+          margin-top: 10px;
+        }
+    
+        .likes-count {
+          font-size: 1em;
+          color: #007bff;
+          margin-top: 15px;
+          display: block;
+        }
+    
+        button {
+          padding: 8px 12px;
+          margin-right: 5px;
+          margin-top: 10px;
+          font-size: 0.9em;
+          border: none;
+          border-radius: 6px;
+          cursor: pointer;
+          transition: background-color 0.2s ease;
+    
+          &.like-button {
+            background-color: #5795dc;
+            color: #fff;
+    
+            &:hover {
+              background-color: #460687;
+            }
+          }
+    
+          &.delete-button {
+            background-color: #dc3545;
+            color: #fff;
+    
+            &:hover {
+              background-color: #c82333;
+            }
+          }
+        }
+      }
+    }
+  

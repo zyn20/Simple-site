@@ -1,0 +1,480 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif; // Specify your preferred font-family
+}
+.bg-section {
+  background-image: url('../assets/images/bg-shows.jpg'); /* Replace with the actual path to your image */
+  background-size: cover;
+  background-position: center;
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFFFFF; /* White color for text */
+  text-align: center;
+  padding: 0 1rem; /* Add padding to ensure text does not touch the sides */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Black shadow with 50% opacity */
+}
+
+.bg-section h2 {
+  font-size: 2rem; /* Default font size for larger screens */
+  margin: 0 0 1rem 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Black shadow with 50% opacity */
+}
+
+.bg-section h1 {
+  font-size: 3rem; /* Default font size for larger screens */
+  line-height: 1.2;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Black shadow with 50% opacity */
+}
+
+.soundcloud-player {
+  width: 60%; /* Default width for larger screens */
+  margin-top: 2rem; /* Spacing from the top content */
+}
+
+/* Responsive adjustments for tablets */
+@media (max-width: 768px) {
+  .bg-section h2 {
+    font-size: 4vw; /* Adjust font size based on viewport width */
+  }
+
+  .bg-section h1 {
+    font-size: 5.5vw; /* Adjust font size based on viewport width */
+  }
+
+  .soundcloud-player {
+    width: 80%; /* Increase width for smaller screens */
+  }
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 480px) {
+  .bg-section {
+    margin-top: 0.75rem;
+    height: auto; /* Adjust height for mobile devices */
+    padding-bottom: 2rem; /* Add bottom padding */
+  }
+
+  .bg-section h2 {
+    margin-top: 0.75rem;
+    font-size: 3vw; /* Larger font size for small screens */
+  }
+
+  .bg-section h1 {
+    margin-top: 0.75rem;
+    font-size: 5vw; /* Larger font size for small screens */
+  }
+
+  .soundcloud-player {
+    margin-top: 0.75rem;
+    width: 50%; /* Full width for mobile screens */
+    margin-top: 1rem; /* Less spacing from the top content */
+  }
+}
+
+
+// Base margin from the top of the page to the shows list
+$top-margin: 2rem; // Adjust as needed
+
+.shows-container {
+  margin-top: $top-margin;
+  padding: 1rem;
+  text-align: center; // Centers the title, adjust if necessary
+
+  .shows-title {
+    margin-bottom: 2rem; // Space between title and shows list
+  }
+
+  .shows-list {
+    max-width: 800px; // Maximum width of the shows list, adjust as needed
+    margin: 0 auto; // Centers the shows list in the page
+
+    .show {
+      display: grid;
+      grid-template-columns: 2fr 3fr 2fr 1fr; /* Adjust the fractions as needed for layout */
+      gap: 1rem; /* Space between columns */
+      align-items: center;
+      margin-bottom: 1rem; /* Space between show entries */
+      cursor: pointer;
+      transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  .show:not(:last-child) {
+      border-bottom: 1px solid #ccc; /* Separator line between show entries */
+  }
+  
+  .show-date, .show-venue, .show-location {
+      text-align: left;
+  }
+  
+  .show-button {
+      padding: 0.5rem 1rem;
+      background-color: #333; /* Dark background for the button */
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+  }
+  
+  .show-button:hover {
+      background-color: #1a1a1a; /* Slightly darker on hover */
+  }
+  
+  .show--selected {
+      background-color: #f0f0f0; /* Background color for selected show */
+  }
+  
+  .show:hover {
+      background-color: #f8f8f8; /* Background color on hover */
+  }
+  
+  }
+}
+// .footer {
+//     background-color: #323232;
+//     color: #fff;
+//     padding: 2rem;
+//     margin-top: 4rem;
+//     font-family: 'Arial', sans-serif;
+
+//     .container {
+//         display: flex;
+//         flex-wrap: wrap;
+//         justify-content: space-between;
+//     }
+
+//     .footer__section {
+//         flex: 1 1 100%;
+
+//         &__heading {
+//             font-size: 2.5rem;
+//             font-weight: bold;
+//             margin-bottom: 1rem;
+//         }
+
+//         &__social-icons {
+//             display: flex;
+//             align-items: center;
+//             margin-bottom: 1rem;
+
+//             img {
+//                 width: 30px; // Adjust the width of social icons
+//                 margin-right: 0.5rem;
+//                 transition: opacity 0.3s ease;
+
+//                 &:hover {
+//                     opacity: 0.8;
+//                 }
+//             }
+//         }
+//     }
+
+//     .footer__contact-info {
+//         display: flex;
+//         flex-wrap: wrap;
+//         justify-content: space-between;
+
+//         .footer__contact {
+//             flex: 1 1 48%;
+//             margin-bottom: 1.5rem;
+
+//             p {
+//                 margin: 0;
+//             }
+
+//             a {
+//                 color: #fff;
+//                 text-decoration: none;
+//                 font-weight: bold;
+//             }
+//         }
+//     }
+
+//     .footer__brand {
+//         flex: 1 1 100%;
+//         text-align: center;
+
+//         p {
+//             font-weight: bold;
+//             font-size: 1.5rem;
+//             text-transform: uppercase;
+//         }
+//     }
+
+//     // Responsive styles
+//     @media (max-width: 768px) {
+//         .container {
+//             flex-direction: column;
+//         }
+
+//         .footer__section,
+//         .footer__contact-info,
+//         .footer__brand {
+//             flex: 1 1 100%;
+//         }
+//     }
+// }
+
+// .footer {
+//     background-color: #323232;
+//     color: #fff;
+//     padding: 2rem;
+//     font-family: 'Arial', sans-serif;
+    
+//     .container {
+//         display: flex;
+//         justify-content: space-between;
+//         align-items: center;
+//         max-width: 1200px;
+//         margin: auto;
+//         padding: 0 2rem;
+
+//         @media (max-width: 768px) {
+//             flex-direction: column;
+//             align-items: center;
+//         }
+//     }
+    
+//     .footer__left, .footer__right {
+//         flex-basis: 20%;
+        
+//         @media (max-width: 768px) {
+//             flex-basis: 100%;
+//             margin-bottom: 1rem;
+//         }
+//     }
+
+//     .footer__contacts {
+//         display: flex;
+//         justify-content: space-between;
+//         flex-basis: 60%;
+
+//         @media (max-width: 768px) {
+//             flex-direction: column;
+//             align-items: center;
+//             text-align: center;
+//             flex-basis: 100%;
+//         }
+//     }
+    
+//     .footer__heading {
+//         margin-bottom: 1rem;
+//     }
+
+//     .footer__social-icons {
+//         display: flex;
+//         justify-content: flex-start;
+//         img {
+//             margin-right: 1rem;
+//         }
+//     }
+    
+//     .footer__contact p {
+//         margin-bottom: 1rem;
+//     }
+
+//     .footer__brand {
+//         text-align: right;
+//         font-size: 1.5rem;
+//         font-weight: bold;
+        
+//         @media (max-width: 768px) {
+//             text-align: center;
+//         }
+//     }
+// }
+// .footer {
+//     background-color: #232323; // A dark background color for the footer
+//     color: #fff; // White color text for better contrast
+//     padding: 2rem 0; // Top and bottom padding
+//     font-family: 'Arial', sans-serif; // Font family for the text
+  
+//     .container {
+//       display: flex;
+//       justify-content: space-between; // Space out the main content
+//       align-items: center; // Align items vertically
+//       max-width: 1200px; // Maximum width of the inner content
+//       margin: 0 auto; // Center the container
+//       padding: 0 2rem; // Padding on the sides
+  
+//       .footer__section {
+//         &:first-child {
+//           flex-basis: 20%; // Adjust as needed
+//           text-align: left; // Align the 'Get in Touch' to the left
+//         }
+  
+//         &:nth-child(2) {
+//           flex-basis: 60%; // Adjust as needed
+//           display: flex;
+//           justify-content: space-evenly; // Even spacing between contact info
+//           align-items: flex-start;
+//         }
+  
+//         &:last-child {
+//           flex-basis: 20%; // Adjust as needed
+//           text-align: right; // Align the 'BANDSITE' to the right
+//         }
+//       }
+  
+//       .footer__heading {
+//         margin-bottom: 1rem; // Space below the heading
+//         font-size: 1.5rem; // Size of the 'Get in Touch' heading
+//       }
+  
+//       .footer__contact {
+//         p {
+//           margin: 0 0 1rem; // Space between paragraphs
+//           font-size: 0.9rem; // Size of the contact text
+//           line-height: 1.5; // Line height for better readability
+//         }
+  
+//         a {
+//           color: #fff; // White color for links
+//           text-decoration: none; // No underline for links
+  
+//           &:hover {
+//             text-decoration: underline; // Underline on hover for better UX
+//           }
+//         }
+//       }
+  
+//       .footer__brand {
+//         font-size: 1.2rem; // Size of the 'BANDSITE' brand text
+//         font-weight: bold; // Bold text for the brand
+//       }
+  
+//       .footer__social-icons {
+//         display: flex;
+//         gap: 1rem; // Space between social icons
+        
+//         img {
+//           height: auto; // Maintain aspect ratio
+//           width: 24px; // Width of the social icons
+//         }
+//       }
+//     }
+//   }
+  
+.footer {
+    background-color: #232323; // A dark background color for the footer
+    color: #fff; // White color text for better contrast
+    padding: 2rem 0; // Top and bottom padding
+    font-family: 'Arial', sans-serif; // Font family for the text
+  
+    .container {
+      display: flex;
+      justify-content: space-between; // Space out the main content
+      align-items: flex-start; // Align items to the start vertically
+      max-width: 1200px; // Maximum width of the inner content
+      margin: 0 auto; // Center the container
+      padding: 0 2rem; // Padding on the sides
+  
+      .footer__section {
+        // Remove the &:first-child, &:nth-child(2) and &:last-child if they are not needed anymore
+  
+        // Adjust flex-basis for 3 column layout
+        flex-basis: calc(33.333% - 40px); // Subtracting the gaps from the total width
+        margin-right: 20px; // Half of the gap on the right
+        margin-left: 20px; // Half of the gap on the left
+        &:first-child, &:last-child {
+          margin-right: 0;
+          margin-left: 0;
+        }
+  
+        &:first-child {
+          order: -1; // Bring 'Get in Touch' to the start
+          text-align: left; // Align the 'Get in Touch' to the left
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+  
+          .footer__heading {
+            margin-bottom: 0.5rem; // Space below the heading
+            font-size: 1.5rem; // Size of the 'Get in Touch' heading
+          }
+  
+          .footer__social-icons {
+            display: flex;
+            gap: 0.5rem; // Space between social icons
+  
+            img {
+              height: auto; // Maintain aspect ratio
+              width: 24px; // Width of the social icons
+            }
+          }
+        }
+  
+        &:last-child {
+            order: 1; // Bring 'BANDSITE' to the end
+            text-align: right; // Align the 'BANDSITE' text to the right
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-end;
+    
+            .footer__brand {
+              font-size: 1.5rem; // Size of the 'BANDSITE' brand text
+              font-weight: bold; // Bold text for the brand
+              margin-top: 1rem; // Spacing above the brand name
+            }
+          }
+        }
+    
+        .footer__contact {
+          p {
+            margin: 0 0 1rem; // Space between paragraphs
+            font-size: 0.9rem; // Size of the contact text
+            line-height: 1.5; // Line height for better readability
+          }
+    
+          a {
+            color: #fff; // White color for links
+            text-decoration: none; // No underline for links
+    
+            &:hover {
+              text-decoration: underline; // Underline on hover for better UX
+            }
+          }
+        }
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .footer .container {
+        flex-direction: column;
+        align-items: center;
+    
+        .footer__section {
+          // Make each section take full width and center its content
+          flex-basis: 100%;
+          text-align: center;
+          margin: 1rem 0; // Add top and bottom margin for spacing
+    
+          // Reset order on smaller screens
+          &:first-child, &:last-child {
+            order: 0;
+          }
+        }
+    
+        .footer__social-icons {
+          justify-content: center; // Center social icons on smaller screens
+        }
+    
+        .footer__brand {
+            align-items: center; // Center align the 'BANDSITE' brand
+            margin-top: 1rem; // Add spacing above the brand on smaller screens
+          }
+      
+          .footer__contact {
+            text-align: center; // Center align contact information on smaller screens
+      
+            p {
+              margin-bottom: 0.5rem; // Reduce spacing between paragraphs on smaller screens
+            }
+          }
+        }
+      }
+      
